@@ -18,6 +18,7 @@ const Jumbotron = () => {
                 <a className="btn btn-outline-light btn-lg" href="#!" role="button"
                   >Call to action</a
                 >
+                
               </div>
             </div>
           </div>
