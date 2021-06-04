@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+.btn-sm {
+  padding: 0.5rem;
+}
+.bg {
+  min-height: calc(100vh - 85px);
+  background: #ccc;
+}
+.navbar {
+  background: darkslateGrey;
+  padding: 1rem;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+}
+.nav-links a {
+  display: inline-block;
+  padding: 1rem;
+}
+.nav-links a:hover {
+  color: #d1d1d1;
+}
+.active-link {
+  text-decoration: underline;
+}
+.posts {
+  padding-top: 2rem;
+}
+.post {
+  box-shadow: 5px 5px 10px 0 #5d5d5d;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+}
+.post h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+}
+input.form-control {
+  border: none;
+  padding: 0.5rem 0.1rem;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+}
+input.form-control:focus {
+  border-bottom-color: #1100ff;
+}
+textarea.form-control {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  resize: none;
+  margin-top: 0.5rem;
+}
+textarea.form-control:focus {
+  border-color: #1100ff;
+}
+.input-group {
+  padding-top: 2rem;
+}
+.input-label {
+  font-size: 1.2rem;
+}
+.btn-form {
+  margin-top: 2rem;
+  background: darkslateGrey;
+  color: #fff;
+  text-transform: uppercase;
+}
