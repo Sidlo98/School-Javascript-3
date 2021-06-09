@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit adipisci dolorem earum officia corrupti. Expedita, quisquam aspernatur aperiam sit est eaque eius animi vitae, atque illo recusandae, quia ab ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit adipisci dolorem earum officia corrupti. Expedita, quisquam aspernatur aperiam sit est eaque eius animi vitae, atque illo recusandae, quia ab ipsa.",
+      "created": 1
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit adipisci dolorem earum officia corrupti. Expedita, quisquam aspernatur aperiam sit est eaque eius animi vitae, atque illo recusandae, quia ab ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit adipisci dolorem earum officia corrupti. Expedita, quisquam aspernatur aperiam sit est eaque eius animi vitae, atque illo recusandae, quia ab ipsa.",
+      "created": 2
+    },
+    {
+      "title": "123213",
+      "body": "123131",
+      "created": 1623245021620,
+      "id": 3
+    },
+    {
+      "title": "asd",
+      "body": "asdad",
+      "created": 1623245490247,
+      "id": 4
+    }
+  ]
+}
