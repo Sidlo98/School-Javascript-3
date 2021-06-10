@@ -1,0 +1,7 @@
+.wrapper {
+  height: 100vh;
+}
+.click {
+  user-select: none;
+  cursor: pointer;
+}

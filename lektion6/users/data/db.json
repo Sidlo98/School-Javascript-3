@@ -1,0 +1,11 @@
+{
+  "users": [
+      {
+      "email": "poppe9898@hotmail.com",
+      "password": "$2a$10$Cm0qC5Z7WB32bBQJ05nbpuiXxRPbtQ4WsjxKXhR8/RyYANaCvCUnu",
+      "firstName": "Pontus",
+      "lastName": "Sidlo",
+      "id": 4
+    }
+  ]
+}
