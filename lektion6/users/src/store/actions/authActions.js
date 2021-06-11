@@ -1,6 +1,7 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import actiontypes from '../actiontypes';
+import { getUsers } from './usersActions';
 
 const apiCall = (url, data, dispatch) => {
   axios.post(url, data)
@@ -10,6 +11,17 @@ const apiCall = (url, data, dispatch) => {
   .catch(err => {
     dispatch(failure(err.message))
   })
+}
+
+export const addUser = (user) => {
+  return dispatch => {
+    dispatch(loading())
+    axios.post('http://localhost:3000/users', user)
+    .then(() => {
+      dispatch(getUsers())
+    })
+    .catch(err => dispatch(failure(err.message)))
+  }
 }
 
 export const login = user => {

@@ -11,6 +11,14 @@ const actiontypes = () => {
       loading:  'USERS_LOADING',
       success:  'USERS_SUCCESS',
       failure:  'USERS_FAILURE'
+    },
+    user: {
+      getUser:  'USER_GET',
+      loading:  'USER_LOADING',
+      success:  'USER_SUCCESS',
+      failure:  'USER_FAILURE',
+      update:   'USER_UPDATE',
+      delete:   'USER_DELETE'
     }
   }
 }

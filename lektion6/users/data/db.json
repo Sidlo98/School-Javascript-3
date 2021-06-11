@@ -1,11 +1,12 @@
 {
   "users": [
-      {
-      "email": "poppe9898@hotmail.com",
-      "password": "$2a$10$Cm0qC5Z7WB32bBQJ05nbpuiXxRPbtQ4WsjxKXhR8/RyYANaCvCUnu",
+    {
+      "email": "pontus@mail.com",
+      "password": "$2a$10$z.1Zb4Jigmy1l6XK5Y2RsewTLQBsuOavOIea52NmiDuL6.bkpSIiG",
       "firstName": "Pontus",
       "lastName": "Sidlo",
-      "id": 4
+      "admin": true,
+      "id": 6
     }
   ]
 }

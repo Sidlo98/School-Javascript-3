@@ -1,9 +1,17 @@
-import React from 'react'
+import { useSelector } from 'react-redux'
+import User from '../components/User'
 
 const UserList = () => {
+
+  const users = useSelector(state => state.users.list)
+
   return (
-    <div>
-      Users
+    <div className="container mt-5">
+      {
+        users.map(user => (
+          <User key={user.id} user={user} />
+        ))
+      }
     </div>
   )
 }
