@@ -1,0 +1,22 @@
+nav {
+  background: darkviolet;
+  padding: 1rem 0;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

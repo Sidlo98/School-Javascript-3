@@ -1,0 +1,47 @@
+<div class="sandbox">
+  <button class="btn" (click)="handleClick()">Click me</button>
+  <p>
+    you clicked <strong>{{ counter }}</strong> times
+  </p>
+</div>
+
+<div class="sandbox">
+  <button class="btn" (click)="login()">{{ loginText }}</button>
+
+  <!-- <ng-template [ngIf]="loggedIn" [ngIfElse]="elseBlock">
+    <h3>You are logged in</h3>
+  </ng-template>
+
+  <ng-template #elseBlock>
+    <h3>Please login</h3>
+  </ng-template> -->
+
+  <!-- <div *ngIf="loggedIn; then thenBlock else elseBlock"></div>
+    
+    <ng-template #thenBlock>
+      <h3>you are logged in</hh3>
+      </ng-template>
+      
+      <ng-template #elseBlock>
+        <h3>Please login</h3>
+      </ng-template> -->
+  <div *ngIf="loggedIn">
+    <h3>You are logged in</h3>
+  </div>
+  <div *ngIf="!loggedIn">
+    <h3>Please login</h3>
+  </div>
+
+  <!--  STYLE BINDING -->
+
+  <!-- <div class="box" [style.background-color]="loggedIn ? 'green' : 'red'"></div> -->
+  <!-- <div class="box" [ngStyle]="{
+    'background-color': loggedIn ? 'green' : 'red',
+    'border': loggedIn ? '2px solid red' : '2px solid green'
+  }"></div> -->
+
+  <!-- <div class="box" [class.green]="loggedIn"></div> -->
+  <!-- <div class="box" [ngClass]="setClasses()"></div> -->
+
+  <div class="box" [class]="loggedIn ? 'green' : 'red'"></div>
+</div>

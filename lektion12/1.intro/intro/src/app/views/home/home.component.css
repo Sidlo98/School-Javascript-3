@@ -1,0 +1,26 @@
+.sandbox {
+  margin-top: 2rem;
+  border: 1px solid #fff;
+  padding: 2rem;
+}
+.btn {
+  padding: 0.5rem 0.8rem;
+  background: darkviolet;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.box {
+  border: 1px solid #cecece;
+  width: 50px;
+  height: 30px;
+}
+.green {
+  background: green;
+}
+.red {
+  background: red;
+}

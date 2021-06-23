@@ -1,0 +1,8 @@
+.completed {
+  color: #a0a0a0;
+  text-decoration: line-through;
+}
+h3 {
+  user-select: none;
+  cursor: pointer;
+}

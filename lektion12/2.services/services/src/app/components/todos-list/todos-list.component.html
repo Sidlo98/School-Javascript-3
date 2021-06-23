@@ -1,0 +1,13 @@
+<app-add-todo (addTodo)="newTodo($event)"></app-add-todo>
+
+<section class="bg-secondary py-5">
+  <div class="container">
+    <ul class="ps-0">
+      <app-todo
+        *ngFor="let todo of todos"
+        [todo]="todo"
+        (onDelete)="delteTodo($event)"
+      ></app-todo>
+    </ul>
+  </div>
+</section>

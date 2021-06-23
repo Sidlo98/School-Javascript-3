@@ -1,0 +1,21 @@
+<header class="bg-dark">
+  <div class="container py-5">
+    <form  (ngSubmit)="onSub()">
+      <div class="row">
+        <div class="col-10">
+          <input
+            type="text"
+            placeholder="Add Todo"
+            class="form-control"
+            name="title"
+            [(ngModel)]="title"
+          />
+        </div>
+        <div class="col-2">
+          <button class="btn btn-secondary w-100">ADD</button>
+        </div>
+        <div class="text-white">{{ title }}</div>
+      </div>
+    </form>
+  </div>
+</header>
