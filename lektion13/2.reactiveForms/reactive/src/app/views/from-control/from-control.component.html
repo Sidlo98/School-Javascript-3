@@ -1,0 +1,9 @@
+<form class="mb-4" (ngSubmit)="onSub()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" class="form-control" [formControl]="name" />
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
+
+<p>Value: {{ name.value }}</p>

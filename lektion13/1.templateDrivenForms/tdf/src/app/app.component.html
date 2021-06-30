@@ -1,0 +1,298 @@
+<h1 class="text-center">Template Drivern Forms</h1>
+
+<div class="container mt-5">
+  <!-- <form class="mb-5"> -->
+  <!-- <input
+      type="text"
+      class="form-control"
+      name="firstName"
+      ngModel
+      #firstName="ngModel"
+      (change)="log(firstName)"
+    /> -->
+  <!-- <input
+      type="text"
+      name="firstName"
+      class="form-control"
+      [ngModel]="input"
+      #firstName="ngModel"
+      (change)="log(firstName)"
+    />
+    {{input}} -->
+  <!-- <input
+      type="text"
+      name="firstName"
+      class="form-control"
+      [(ngModel)]="input"
+      #firstName="ngModel"
+      (change)="log(firstName)"
+    />
+    {{ input }}
+  </form> -->
+
+  <!-- <form #form="ngForm" (ngSubmit)="onSub(form)">
+    <div class="mb-3">
+      <label for="fname">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        #fname="ngModel"
+        name="fname"
+        id="fname"
+        ngModel
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="lname">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        #lname="ngModel"
+        name="lname"
+        id="lname"
+        ngModel
+      />
+    </div>
+
+    <div ngModelGroup="address">
+      <div class="mb-3">
+        <label for="street">Street</label>
+        <input
+          type="text"
+          class="form-control"
+          #street="ngModel"
+          name="street"
+          id="street"
+          ngModel
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="postalCode">Postal Code</label>
+        <input
+          type="text"
+          class="form-control"
+          #postalCode="ngModel"
+          name="postalCode"
+          id="postalCode"
+          ngModel
+        />
+      </div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+  </form> -->
+
+  <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+    <div class="mb-3">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="user.firstName"
+        #firstName="ngModel"
+        required
+      />
+      <div
+        class="text-danger"
+        *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)"
+      >
+        <small>You must enter a First Name.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="user.lastName"
+        #lastName="ngModel"
+        required
+      />
+      <div
+        class="text-danger"
+        *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)"
+      >
+        <small>You must enter a Last Name.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+        #password="ngModel"
+        required
+        minlength="5"
+      />
+      <div
+        class="text-danger"
+        *ngIf="!password.valid && password.touched && password.errors"
+      >
+        <small *ngIf="password.errors.required"
+          >You must enter a password.</small
+        >
+        <small *ngIf="password.errors.minlength"
+          >Your password must be at least 5 characters long.</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        required
+        pattern="\w+@[a-zA-Z]+?\.[a-zA-Z]{2,3}"
+      />
+      <div
+        class="text-danger"
+        *ngIf="!email.valid && email.touched && email.errors"
+      >
+        <small *ngIf="email.errors.required">You must enter a email.</small>
+        <small *ngIf="email.errors.pattern">Must enter a valid email.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="addressLine">Address Line</label>
+      <input
+        type="text"
+        class="form-control"
+        id="addressLine"
+        name="addressLine"
+        [(ngModel)]="address.addressLine"
+        #addressLine="ngModel"
+        required
+      />
+      <div
+        class="text-danger"
+        *ngIf="!addressLine.valid && addressLine.touched && addressLine.errors"
+      >
+        <small>You must enter a address line.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="postalCode">Postal Code</label>
+      <input
+        type="text"
+        class="form-control"
+        id="postalCode"
+        name="postalCode"
+        [(ngModel)]="address.postalCode"
+        #postalCode="ngModel"
+        required
+        pattern="[0-9]{5}"
+      />
+      <div
+        class="text-danger"
+        *ngIf="!postalCode.valid && postalCode.touched && postalCode.errors"
+      >
+        <small *ngIf="postalCode.errors.required"
+          >You must enter a postal code.</small
+        >
+        <small *ngIf="postalCode.errors.pattern"
+          >Must enter a valid postal code.</small
+        >
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="city">City</label>
+      <input
+        type="text"
+        class="form-control"
+        id="city"
+        name="city"
+        [(ngModel)]="address.city"
+        #city="ngModel"
+        required
+      />
+      <div
+        class="text-danger"
+        *ngIf="!city.valid && city.touched && city.errors"
+      >
+        <small>You must enter a city.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="hobbies">Hobbies</label>
+      <select
+        class="form-control"
+        id="hobbies"
+        name="hobbies"
+        [(ngModel)]="user.hobbies"
+        #hobbies="ngModel"
+        required
+      >
+        <option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+      <div
+        class="text-danger"
+        *ngIf="!hobbies.valid && hobbies.touched && hobbies.errors"
+      >
+        <small>You must enter a hobbies.</small>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div
+        *ngFor="let lang of preferredLanguages"
+        class="form-check form-check-inline"
+      >
+        <input
+          type="radio"
+          class="form-check-input"
+          [id]="lang"
+          name="preferredLanguage"
+          [(ngModel)]="user.preferredLanguage"
+          [value]="lang"
+          required
+        />
+        <label class="form-check-label" [for]="lang">{{ lang }}</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="form-check">
+        <label class="form-check-label" for="accepted">
+          I accept the user terms and conditions
+        </label>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          name="accepted"
+          [(ngModel)]="user.accepted"
+          id="accepted"
+          required
+        />
+      </div>
+    </div>
+
+    <button class="btn btn-info" [disabled]="regForm.form.invalid">
+      Submit
+    </button>
+  </form>
+
+  <hr class="my-4" />
+  <strong>User:</strong>{{ user | json }}
+</div>

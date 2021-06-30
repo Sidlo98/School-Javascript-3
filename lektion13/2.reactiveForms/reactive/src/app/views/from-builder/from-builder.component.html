@@ -1,0 +1,159 @@
+<h1 class="text-center">Reactive Forms</h1>
+<hr class="my-3" />
+
+<p>{{ regForm.value | json }}</p>
+<p>{{ regForm.status }}</p>
+
+<hr class="my-3" />
+
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+  <h4 class="mb-3">Name</h4>
+
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name:</label>
+    <input
+      type="text"
+      id="firstName"
+      class="form-control"
+      formControlName="firstName"
+      [class.is-valid]="
+        firstName.valid && (firstName.dirty || firstName.touched)
+      "
+      [class.is-invalid]="
+        firstName.invalid && (firstName.dirty || firstName.touched)
+      "
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name:</label>
+    <input
+      type="text"
+      id="lastName"
+      class="form-control"
+      formControlName="lastName"
+      [class.is-valid]="lastName.valid && (lastName.dirty || lastName.touched)"
+      [class.is-invalid]="
+        lastName.invalid && (lastName.dirty || lastName.touched)
+      "
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input
+      type="text"
+      id="email"
+      class="form-control"
+      formControlName="email"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input
+      type="password"
+      id="password"
+      class="form-control"
+      formControlName="password"
+      [class.is-valid]="password.valid && (password.dirty || password.touched)"
+      [class.is-invalid]="
+        password.invalid && (password.dirty || password.touched)
+      "
+    />
+    <small>Must contain atleast 5 characters</small>
+    <br />
+    <small class="text-danger" *ngIf="password.errors?.forbiddenPassword"
+      >Password cannot be {{ password.errors?.forbiddenPassword.value }}</small
+    >
+  </div>
+
+  <div class="mb-3">
+    <label for="confirmPassword" class="form-label">Confirm Password:</label>
+    <input
+      type="password"
+      id="confirmPassword"
+      class="form-control"
+      formControlName="confirmPassword"
+    />
+    <small *ngIf="regForm.errors?.missMatch" class="text-danger"
+      >passwords don't match</small
+    >
+  </div>
+
+  <div formGroupName="address">
+    <h4>Address</h4>
+
+    <div class="mb-3">
+      <label for="addressLine" class="form-label">Adress Line:</label>
+      <input
+        type="text"
+        id="addressLine"
+        class="form-control"
+        formControlName="addressLine"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="postalCode" class="form-label">Posta Code:</label>
+      <input
+        type="number"
+        id="postalCode"
+        class="form-control"
+        formControlName="postalCode"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="city" class="form-label">City:</label>
+      <input
+        type="text"
+        id="city"
+        class="form-control"
+        formControlName="city"
+      />
+    </div>
+  </div>
+
+  <h4>ProgramingSkills</h4>
+
+  <div formArrayName="programingSkills">
+    <div
+      class="mb-3"
+      *ngFor="let skill of programingSkills.controls; let i = index"
+    >
+      <label [for]="i" class="form-label">Skill {{ i + 1 }}</label>
+
+      <div class="row">
+        <div class="col-3">
+          <input type="text" class="form-control" [formControlName]="i" />
+        </div>
+
+        <div class="col-1" (click)="removeSkill(i)">
+          <i class="fas fa-times fa-2x mt-1 text-muted cursor"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <button type="button" class="btn btn-primary" (click)="addSkill()">
+      Add Programing Skill
+    </button>
+  </div>
+
+  <hr class="my-5" />
+
+  <div class="form-check mb-3">
+    <label for="acceptTerms" class="form-check-label"
+      >I accept the user terms and conditions.</label
+    >
+    <input
+      type="checkbox"
+      class="form-check-input"
+      id="acceptTerms"
+      formControlName="acceptTerms"
+    />
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!regForm.valid">Submit</button>
+</form>
