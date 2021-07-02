@@ -1,0 +1,28 @@
+<ul class="list-group">
+  <li
+    class="
+      list-group-item
+      d-flex
+      justify-content-between
+      align-items-center
+      py-4
+    "
+    *ngFor="let item of products$ | async"
+  >
+    <div class="d-flex align-items-center">
+      <h4 class="me-5 my-0">{{ item.name }}</h4>
+      <h5 class="my-0">{{ item.quantity }} X {{ item.price }} kr</h5>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-sm btn-dark me-1" (click)="increment(item)">
+        +
+      </button>
+      <button class="btn btn-sm btn-dark me-1" (click)="decrement(item)">
+        -
+      </button>
+      <button class="btn btn-sm btn-danger" (click)="deleteCartItem(item.id)">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
+  </li>
+</ul>
