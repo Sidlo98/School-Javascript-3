@@ -1,0 +1,7 @@
+<div class="bg-dark">
+  <div class="container pt-5">
+    <app-add-todo></app-add-todo>
+    <app-loading *ngIf="loading$ | async"></app-loading>
+    <app-todo-list></app-todo-list>
+  </div>
+</div>
