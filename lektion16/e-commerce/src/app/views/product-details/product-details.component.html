@@ -1,0 +1,28 @@
+<app-loading *ngIf="loading$ | async"></app-loading>
+<div class="container my-5 py-5">
+  <section class="text-center">
+    <h3 class="mb-5">Product Details</h3>
+    <div class="row align-items-center gx-5">
+      <div class="col-lg-6">
+        <img [src]="product$.image" class="img-fluid" alt="product image" />
+      </div>
+      <div class="col-lg-6 text-center text-lg-center">
+        <div>
+          <h2 class="text-center mb-5">{{ product$.name }}</h2>
+
+          <div class="mb-5">
+            <h5 class="mb-3">Description</h5>
+            <p>{{ product$.desc }}</p>
+          </div>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center ">
+          <h3><span class="text-danger">{{product$.price}}</span> SEK</h3>
+          <button class="btn btn-primary" (click)="addToCart(product$, 1)">Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

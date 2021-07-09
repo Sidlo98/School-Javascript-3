@@ -1,0 +1,26 @@
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.308);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-bottom-color: blue;
+  border-top-color: blue;
+  animation: spinner 1s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

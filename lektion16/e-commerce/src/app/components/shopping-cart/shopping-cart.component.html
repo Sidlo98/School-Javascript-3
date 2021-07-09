@@ -1,0 +1,68 @@
+<div>
+  <div class="cart-item" *ngFor="let item of shoppingCart">
+    <div class="p-2 d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img
+          [src]="item.product.image"
+          class="image-fluid image-width"
+          alt="product image"
+        />
+        <div>
+          <div>
+            <strong>{{ item.product.name }}</strong>
+          </div>
+          <div>
+            <small>{{ item.quantity }} x {{ item.product.price }} SEK</small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div
+          class="btn-group btn-group-sm me-2"
+          role="group"
+          aria-label="quantity"
+        >
+          <button
+            class="btn btn-dark px-3"
+            (click)="decrement(item); $event.stopPropagation()"
+          >
+            -
+          </button>
+          <button
+            class="btn btn-dark px-3"
+            (click)="increment(item); $event.stopPropagation()"
+          >
+            +
+          </button>
+        </div>
+        <button
+          class="btn btn-sm btn-danger px-3"
+          (click)="deleteFromCart(item.product._id); $event.stopPropagation()"
+        >
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="dropdown-divider"></div>
+
+  <div class="cart-item" *ngIf="shoppingCart.length < 1">
+    <div class="p-2 d-flex justify-content-center align-items-center">
+      Din Kundvagn är tom
+    </div>
+    <div class="dropdown-divider"></div>
+  </div>
+</div>
+
+<div class="p-2 d-flex justify-content-between align-items-center">
+  <div>
+    <div>
+      Totalt: <span>{{ cartTotal }} SEK</span>
+    </div>
+    <small class="text-muted"> inkl. moms</small>
+  </div>
+  <div class="d-flex flex-column">
+    <button class="btn btn-primary">Gå till kassan</button>
+  </div>
+</div>
